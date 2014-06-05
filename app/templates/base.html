@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="static/css/metro-bootstrap.css">
+        <script src="static/javascript/jquery/jquery.min.js"></script>
+        <script src="static/javascript/jquery/jquery.widget.min.js"></script>
+        <script src="static/javascript/metro/metro.min.js"></script>
+    </head>
+    <body class="metro">
+      <nav class="navigation-bar dark shadow">
+        <nav class="navigation-bar-content">
+            <a href="/" class="element icon-grid-view"><span class="icon-grid-view"> FlaskBlog </span></a>
+            <a href="/login" class="element place-right">Login</a>
+            <a href="/contact" class="element place-right">Contact</a>
+            <a href="/projects" class="element place-right">Projects</a>
+            <a href="/index" class="element place-right">Home</a>
+        </nav>
+      </nav>
+
+
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{ message }} </li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    
+    </body>
+</html>
